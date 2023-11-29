@@ -3,7 +3,7 @@ function Tasks({tasks,removeTask}) {
     return (
         <div className='mt-8'>
         {
-            tasks.map((task,index)=>{
+            tasks.map((task)=>{
                 return(
                     <div key={task.id} className="border-2 p-2 mt-5 flex justify-between">
                         <div className="flex flex-col">
