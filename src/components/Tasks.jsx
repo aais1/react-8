@@ -3,6 +3,11 @@ function Tasks({tasks,removeTask,completeTask,Completed}) {
     return (
         <div className='mt-8'>
         {
+            (tasks.length===0)?
+            <div key={tasks.id} className="border-2 p-2 mt-5 flex justify-center text-green-500 italic ">
+                <h1 className="text-center text-2xl font-bold">No Tasks To Show</h1>
+            </div>
+                :
             tasks.map((task)=>{
                 return(
                     <div key={task.id} className="border-2 p-2 mt-5 flex justify-between">

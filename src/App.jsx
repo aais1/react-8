@@ -2,7 +2,7 @@
 import Header from './components/Header.jsx';
 import Addtask from "./components/Addtask.jsx";
 import Tasks from './components/Tasks.jsx';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [ShowAddTask, setShowAddTask] = useState(true);
@@ -47,15 +47,18 @@ function App() {
     setTask(e.target.value);
   }
 
+  const buttonText = ShowAddTask ? 'Close' : 'Add';
+  const buttonColor = ShowAddTask ? 'red' : 'green';
+
+
+
+
   return (
     <>
       <div className="w-[100vw] sm:w-[70vw] md:w-[60vw] m-auto my-[10px]">
         <div className='border-blue-100 border-2 p-4 shadow-2xl'>
-          {ShowAddTask ?
-            <Header onClick={handleClick} color={'red'} text={'Close'} />
-            :
-            <Header onClick={handleClick} color={'green'} text={'Add'} />
-          }
+
+          <Header onClick={handleClick} color={buttonColor} text={buttonText} />
 
           {ShowAddTask &&
             <Addtask reminder={Reminder} setReminder={setReminder} setTask={setTask} onclick={addTask}
